@@ -18,7 +18,7 @@ def WebScraping():
 
 #<div class="YMlKec fxKbKc">18.3578</div>
 
-for i in range(10):
+for i in range(100):
     url = "https://www.google.com/finance/quote/USD-MXN?sa=X&ved=2ahUKEwiarpWnscCHAxVlJUQIHYMXGuEQmY0JegQIHBAw"
 
     response = requests.get(url, headers={'Accept': 'text/html'})
