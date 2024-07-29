@@ -1,22 +1,41 @@
 # Import all the libraries needed
 from selenium import webdriver
-from selenium.webdriver.firefox.service import Service as FirefoxService
+#In this case we will be using CHrome because we are using a Raspberry
+from selenium.webdriver.chrome.service import Service 
 from selenium.webdriver.common.by import By
 from time import sleep
 
-# Know the URL
-url = 'https://acme-test.uipath.com/login'
 
-# Specify the path to the geckodriver
-gecko_service = FirefoxService(executable_path="/usr/local/bin/geckodriver")
+browserDriver = Service('/usr/lib/chromium-browser/chromedriver')
+driver = webdriver.Chrome(service=browserDriver)
 
-# Initiate the instance and open Firefox
-driver = webdriver.Firefox(service=gecko_service)
-# Maximize Browser window
-driver.maximize_window()
+driver.get('https://acme-test.uipath.com/login')
 
-# Load the URL to our browser
-driver.get(url)
 
-# Wait some time to see the process
+Email = driver.find_element(By.XPATH, '//*[@id="email"]') #Locate the text box
+Email.send_keys("ivan_hds11@hotmail.com")   #Text type
+
+#Do the same with the pass
+password = driver.find_element(By.XPATH, '//*[@id="password"]')
+password.send_keys('Inicio..12345')
+
+
+#Finnaly, press LogIn Button
+#/html/body/div/div[2]/div/div/div/form/button
+LogInButton = driver.find_element(By.XPATH, '/html/body/div/div[2]/div/div/div/form/button')
+LogInButton.click()
+
+
+#It is recommedable to wait some time to see the process
 sleep(10)
+
+
+#Finally close the application
+driver.quit()
+
+
+
+
+#From here we can Start the project using objects
+
+
