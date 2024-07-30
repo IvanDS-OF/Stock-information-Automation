@@ -23,21 +23,31 @@ and BeautifulSoup
 
 Initially we need to install the required libraries to the project, the libraries needed are the next: 
 
-´´´
+
+> selenium
+> webdriver_browser  -- This one is specially needed in this enviroment
+> beautifulsoup4
+> by
+> request
+> time
+
+
+```python
 selenium
 webdriver_browser  -- This one is specially needed in this enviroment
 beautifulsoup4
 by
 request
 time
-´´´
+```
+
 
 
 '''
 hola
 '''
 
-
+***
 ## Resources
 
 
