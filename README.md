@@ -11,30 +11,28 @@ and BeautifulSoup
 
 ***
 ## Characteristics
+IDK
+
 
 
 ***
 ## Pictures
+What is the begining of the project.
+How the user can interact with this information at the end
+
 
 
 ***
 ## Structure
+THis project will run using OOP with a modular Archutecture to prevent errors and isolate all the possible erros during execuiton.
+
+Use of Try Except in all the modules
 
 
 ***
 ## Configuration
 
 Initially we need to install the required libraries to the project, the libraries needed are the next: 
-
-
-```
-selenium
-webdriver_browser  -- This one is specially needed in this enviroment
-beautifulsoup4
-by
-request
-time
-```
 
 ```python
 selenium
@@ -47,12 +45,20 @@ time
 
 ***
 ## Resources
+	**Place all the url here**
+Beautiful SOup
+Selenium
+Google Web Finance - Dolar
+Raspberry
+Raspbian 
 
 
 
 ***
 ## Enviroment
+This project runs within a Raspberry pi 4, it is importante take this in considerations because the chip is an ARM and some libraries could run or not within other enviroments. 
 
+Place photo of a Raspberry and it logo. 
 
 
 ***
