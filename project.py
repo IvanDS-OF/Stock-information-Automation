@@ -24,8 +24,9 @@ from time import sleep
 url = "https://www.google.com/finance/quote/USD-MXN?sa=X&ved=2ahUKEwiarpWnscCHAxVlJUQIHYMXGuEQmY0JegQIHBAw"
 
 
-	#Open the broser in the correct page	
-def obtainInformation(url):
+		
+def ObtainInformation(url):
+	#Open the broser in the correct page
 	response = requests.get(url, headers={'Accept': 'text/html'})
 	parsed_response = BeautifulSoup(response.text, 'html.parser')
 
@@ -33,14 +34,36 @@ def obtainInformation(url):
 	return value
 
 
-def printInformation(value):
+def PrintInformation(value):
+	#Format the value to a string
 	return str(value.text) 
+
+def OpenBrowser(url):
+	#Now we open the browser in whatsapp 
+	
+
+def SelectContact(name):
+	#Searh in the contact list the specific one and select with a click
+	
+
+def SendMesagge(stockValue)
+	#Select the message box, prit the message and click in send
+	
+
+
+
+
+
 
 
 	#Use of the information
 
-stockValue = obtainInformation(url)
-print(printInformation(stockValue), "THis is the current value")
+stockValue = ObtainInformation(url)
+print(PrintInformation(stockValue), "THis is the current value")
+
+
+
+
 
 
 
