@@ -17,7 +17,7 @@ Email.send_keys("ivan_hds11@hotmail.com")   #Text type
 
 #Do the same with the pass
 password = driver.find_element(By.XPATH, '//*[@id="password"]')
-password.send_keys('Inicio..12345')
+password.send_keys('A') #How to import passwords
 
 
 #Finnaly, press LogIn Button

@@ -47,10 +47,15 @@ time
 ## Resources
 	**Place all the url here**
 Beautiful SOup
+
 Selenium
+
 Google Web Finance - Dolar
+
 Raspberry
+
 Raspbian 
+
 
 
 
@@ -58,7 +63,10 @@ Raspbian
 ## Enviroment
 This project runs within a Raspberry pi 4, it is importante take this in considerations because the chip is an ARM and some libraries could run or not within other enviroments. 
 
-Place photo of a Raspberry and it logo. 
+![Raspberru pi](./images/RASPBERRY.jpg)
+
+
+These are the current characteristics of my device
 
 
 ***
