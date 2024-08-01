@@ -63,14 +63,11 @@ Raspbian
 ## Enviroment
 This project runs within a Raspberry pi 4, it is importante take this in considerations because the chip is an ARM and some libraries could run or not within other enviroments. 
 
-> ![Raspberru pi](./images/RASPBERRY.jpg width=50)
-
-<img src="images/RASPBERRY.jpg" width="300" />
-
+<img src="images/RASPBERRY.jpg" width="400" />
 
 These are the current characteristics of my device
 
-
+<img src="images/OS.jpeg" width="400" />
 
 ***
 ## Technical considerations and comments
