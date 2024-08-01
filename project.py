@@ -20,11 +20,28 @@ from time import sleep
 #structure of the project
 
 
-#Define some globlan and important variables
+#Define some globl and important variables
+url = "https://www.google.com/finance/quote/USD-MXN?sa=X&ved=2ahUKEwiarpWnscCHAxVlJUQIHYMXGuEQmY0JegQIHBAw"
 
 
+	#Open the broser in the correct page	
+def obtainInformation(url):
+	response = requests.get(url, headers={'Accept': 'text/html'})
+	parsed_response = BeautifulSoup(response.text, 'html.parser')
 
-	#Open the broser in the correct page
+	value = parsed_response.find(class_='YMlKec fxKbKc')
+	return value
+
+
+def printInformation(value):
+	return str(value.text) 
+
+
+	#Use of the information
+
+stockValue = obtainInformation(url)
+print(printInformation(stockValue), "THis is the current value")
+
 
 
 
