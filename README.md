@@ -63,12 +63,12 @@ Raspbian
 ## Enviroment
 This project runs within a Raspberry pi 4, it is importante take this in considerations because the chip is an ARM and some libraries could run or not within other enviroments. 
 
-![Raspberru pi](./images/RASPBERRY.jpg | width=50)
+![Raspberru pi](./images/RASPBERRY.jpg width=50)
 
 
 These are the current characteristics of my device
 
-![Raspbian OS information](./images/OS.jpeg | width=50)
+![Raspbian OS information](./images/OS.jpeg = width=50)
 
 ***
 ## Technical considerations and comments
