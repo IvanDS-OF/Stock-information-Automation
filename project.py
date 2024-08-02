@@ -66,9 +66,11 @@ class SesionOpen:
 
 	def SelectContact(self):
 		#Searh in the contact list the specific one and select with a click
+		driver = self.driver
 		name = self.contactName
-		contactName = driver.find.element(By.XPATH, "/html/body/div[1]/div/div/div[2]/div[3]/div/div[1]/div/div[2]/div[2]/div/div[1]/p")
-		contactName.send_keys(contactName)
+		
+		contactNameXPATH = driver.find_element(By.XPATH, "/html/body/div[1]/div/div/div[2]/div[3]/div/div[1]/div/div[2]/div[2]/div/div[1]/p")
+		contactNameXPATH.send_keys(name)
 		
 
 	def SendMesagge(stockValue):
@@ -100,12 +102,12 @@ print(PrintInformation(stockValue), "THis is the current value")
 
 
 #Create instance and open browser
-inicioSesion = SesionOpen(urlWhatsapp, "A")
+inicioSesion = SesionOpen(urlWhatsapp, "YoMero")
 inicioSesion.OpenBrowser()
-sleep(15)
+sleep(25)
 
 #Wait to autenticata manually,
-input("Write anything here to continue with the process")
+#input("Write anything here to continue with the process")
 
 #Send the information of the instance
 inicioSesion.SelectContact()
