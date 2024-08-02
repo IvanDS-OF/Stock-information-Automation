@@ -85,10 +85,10 @@ class SesionOpen:
 
 		
 
-	def SendMesagge(self):
+	def SendMesagge(self, message):
 		#Select the message box, prit the message and click in send
 		driver = self.driver
-		message = self.message
+
 		sleep(5)
 		messageBox = driver.find_element(By.XPATH, "/html/body/div[1]/div/div/div[2]/div[4]/div/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div/p")
 		messageBox.send_keys(message)
@@ -97,6 +97,13 @@ class SesionOpen:
 		enterButton.click()
 		
 		print("COMPLETED -> Send information")
+		
+	def QuitBrowser(self):
+		driver = self.driver
+		
+		driver.quit()
+		
+		print("COMPLETED -> Quit the Browser")
 		
 		
 		
@@ -140,13 +147,16 @@ inicioSesion.SelectContact()
 
 #Creating a Test loop
 
-for i in range(100):
+for i in range(300):
 	
-	inicioSesion.SendMesagge()
+	stockValue = ObtainInformation(urlStock)
+	print(PrintInformation(stockValue), "THis is the current value")
+
+	inicioSesion.SendMesagge(PrintInformation(stockValue))
 	
 	sleep(60)
 
-
+inicioSesion.QuitBrowser()
 
 #
 
