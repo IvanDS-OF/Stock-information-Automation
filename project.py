@@ -40,11 +40,12 @@ def PrintInformation(value):
 
 
 class SesionOpen:
-	def __init__(self, urlWhatsapp, contactName):
+	def __init__(self, urlWhatsapp, contactName, message):
 		#Define all the variables and atributes of my object
 		#Remember this is a constructor
 		self.urlWhatsapp = urlWhatsapp
-		self.contactName = contactName		
+		self.contactName = contactName	
+		self.message = message
 		
 		#Init the instance correctly 
 		chrome_options = Options()
@@ -62,6 +63,7 @@ class SesionOpen:
 		driver.get(url)
 		
 		driver.maximize_window()	## Maximize the window for better experience
+		print("COMPLETED -> Open Browser")
 
 
 	def SelectContact(self):
@@ -69,13 +71,35 @@ class SesionOpen:
 		driver = self.driver
 		name = self.contactName
 		
-		contactNameXPATH = driver.find_element(By.XPATH, "/html/body/div[1]/div/div/div[2]/div[3]/div/div[1]/div/div[2]/div[2]/div/div[1]/p")
-		contactNameXPATH.send_keys(name)
+		#Seach in the box
+		searchName = driver.find_element(By.XPATH, "/html/body/div[1]/div/div/div[2]/div[3]/div/div[1]/div/div[2]/div[2]/div/div[1]/p")
+		searchName.send_keys(name)
+		
+		sleep(5)
+		#Click on the first option
+		selectName = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div[2]/div[3]/div/div[3]/div[1]/div/div/div[1]/div/div/div/div[2]/div[1]/div[1]/div/span')
+		sleep(10)
+		selectName.click()
+		
+		print("COMPLETED -> Select the Contact")
+
 		
 
-	def SendMesagge(stockValue):
+	def SendMesagge(self):
 		#Select the message box, prit the message and click in send
-		pass
+		driver = self.driver
+		message = self.message
+		sleep(5)
+		messageBox = driver.find_element(By.XPATH, "/html/body/div[1]/div/div/div[2]/div[4]/div/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div/p")
+		messageBox.send_keys(message)
+		sleep(6)
+		enterButton = driver.find_element(By.XPATH, "/html/body/div[1]/div/div/div[2]/div[4]/div/footer/div[1]/div/span[2]/div/div[2]/div[2]/button/span")
+		enterButton.click()
+		
+		print("COMPLETED -> Send information")
+		
+		
+		
 
 
 
@@ -102,9 +126,9 @@ print(PrintInformation(stockValue), "THis is the current value")
 
 
 #Create instance and open browser
-inicioSesion = SesionOpen(urlWhatsapp, "YoMero")
+inicioSesion = SesionOpen(urlWhatsapp, "Yo", PrintInformation(stockValue))
 inicioSesion.OpenBrowser()
-sleep(25)
+sleep(30)
 
 #Wait to autenticata manually,
 #input("Write anything here to continue with the process")
@@ -112,10 +136,19 @@ sleep(25)
 #Send the information of the instance
 inicioSesion.SelectContact()
 
+#inicioSesion.SendMesagge()
+
+#Creating a Test loop
+
+for i in range(100):
+	
+	inicioSesion.SendMesagge()
+	
+	sleep(60)
 
 
 
-
+#
 
 
 
